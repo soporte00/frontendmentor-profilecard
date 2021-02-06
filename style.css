@@ -15,35 +15,14 @@ body{
 	font-family: 'Kumbh Sans', sans-serif;
 	font-weight: 400;
 	height: 100vh;
-	background: var(--dark-cyan);
+	background: url(assets/images/bg-pattern-top.svg), url(assets/images/bg-pattern-bottom.svg);
+	background-position: -200px -200px, calc(100% + 200px) calc(100% + 200px);
+	background-size: 400px;
+	background-repeat: no-repeat;
+	background-color: var(--dark-cyan);
 	display: flex;
 	align-items: center;
 	justify-content: center;
-}
-
-body::before{
-	content: '';
-	display: block;
-	position: fixed;
-	top:0;
-	left:0;
-	transform: translate(-50%,-50%);
-	width: 100vmin;
-	height: 100vmin;
-	background:no-repeat center/100% url(assets/images/bg-pattern-top.svg);
-}
-
-body::after{
-	content: '';
-	display: block;
-	position: fixed;
-	bottom:0;
-	right: 0;
-	transform: translate(50%,50%);
-	width: 100vmin;
-	height: 100vmin;
-	background:no-repeat center/100% url(assets/images/bg-pattern-bottom.svg);
-	z-index: 0;
 }
 
 .card{
@@ -118,4 +97,11 @@ body::after{
 	color: var(--dark-blue);	
 	font-size: 18px;
 	font-weight: 700;
+}
+
+@media (min-width: 1000px){
+	body{
+		background-position: -100px -400px, calc(100% + 100px) calc(100% + 500px);
+		background-size: 800px;
+	}
 }
